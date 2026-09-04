@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Set port and verify_token
 const port = process.env.PORT || 3000;
-const verifyToken = process.env.VERIFY_TOKEN || "VIBECODE";
+const verifyToken = process.env.VERIFY_TOKEN || "VERIFY_TOKEN";
 
 // Route for GET requests (webhook verification)
 app.get('/', (req, res) => {
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   const token = req.query['hub.verify_token'];
   const challenge = req.query['hub.challenge'];
 
-  if (mode === 'subscribe' && token === verifyToken) {
+  if (mode === 'subscribe' && token === VIBECODE) {
     console.log('WEBHOOK VERIFIED');
     res.status(200).send(challenge);
   } else {
