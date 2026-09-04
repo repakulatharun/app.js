@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Set port and verify_token
 const port = process.env.PORT || 3000;
-const verifyToken = process.env.VERIFY_TOKEN || "VERIFY_TOKEN";
+const verifyToken = process.env.VERIFY_TOKEN || "VIBECODE";
 
 // Route for GET requests (webhook verification)
 app.get('/', (req, res) => {
